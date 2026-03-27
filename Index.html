@@ -161,13 +161,17 @@
          * Se asegura de que la librería esté cargada antes de ejecutar.
          */
         function celebrate() {
-            if (typeof confetti === 'function') {
-                confetti({
-                    particleCount: 150,
-                    spread: 70,
-                    origin: { y: 0.6 },
-                    colors: ['#FF9F1C', '#2EC4B6', '#E71D36']
-                });
+            try {
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 150,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#FF9F1C', '#2EC4B6', '#E71D36']
+                    });
+                }
+            } catch (e) {
+                console.warn("La animación de confeti no se pudo cargar: ", e);
             }
         }
 
@@ -180,16 +184,16 @@
             const producto = document.getElementById('producto').value;
             const mensaje = document.getElementById('mensaje').value;
             
-            // Reemplaza con tu número real de WhatsApp (formato internacional sin el signo +)
+            // Reemplaza con tu número real de WhatsApp (formato internacional)
             const telefono = "521234567890"; 
             const texto = `¡Hola! Soy ${nombre}, quiero un ${producto} para mi perrito ${perro}.%0A%0A*Detalles:* ${mensaje}`;
             
             window.open(`https://wa.me/${telefono}?text=${texto}`, '_blank');
         }
 
-        // Se dispara la celebración una vez que el DOM está completamente cargado para evitar errores de renderizado.
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(celebrate, 500);
+        // Se dispara la celebración con un pequeño retraso para evitar errores de renderizado.
+        window.addEventListener('load', () => {
+            setTimeout(celebrate, 800);
         });
     </script>
 </body>

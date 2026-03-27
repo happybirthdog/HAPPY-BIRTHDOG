@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="Perro con pastel de cumpleaños" class="rounded-3xl shadow-2xl floating w-full max-w-md">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="[Perro con pastel de cumpleaños]" class="rounded-3xl shadow-2xl floating w-full max-w-md">
             </div>
         </div>
     </section>
@@ -156,29 +156,41 @@
     </footer>
 
     <script>
+        /**
+         * Función para disparar la animación de confeti.
+         * Se asegura de que la librería esté cargada antes de ejecutar.
+         */
         function celebrate() {
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#FF9F1C', '#2EC4B6', '#E71D36']
-            });
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#FF9F1C', '#2EC4B6', '#E71D36']
+                });
+            }
         }
 
+        /**
+         * Recopila los datos del formulario y redirige a WhatsApp.
+         */
         function sendToWhatsApp() {
             const nombre = document.getElementById('nombre').value;
             const perro = document.getElementById('perro').value;
             const producto = document.getElementById('producto').value;
             const mensaje = document.getElementById('mensaje').value;
             
-            const telefono = "521234567890"; // REEMPLAZA ESTE NÚMERO POR EL TUYO REAL
+            // Reemplaza con tu número real de WhatsApp (formato internacional sin el signo +)
+            const telefono = "521234567890"; 
             const texto = `¡Hola! Soy ${nombre}, quiero un ${producto} para mi perrito ${perro}.%0A%0A*Detalles:* ${mensaje}`;
             
             window.open(`https://wa.me/${telefono}?text=${texto}`, '_blank');
         }
 
-        // Lanzar confeti al entrar
-        window.onload = celebrate;
+        // Se dispara la celebración una vez que el DOM está completamente cargado para evitar errores de renderizado.
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(celebrate, 500);
+        });
     </script>
 </body>
 </html>

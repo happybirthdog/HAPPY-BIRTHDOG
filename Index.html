@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthdog | ¡La Fiesta de su Vida!</title>
-    <!-- Scripts y Estilos -->
+    <!-- Importación de librerías externas -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -47,7 +47,7 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Navegación -->
+    <!-- Menú de Navegación -->
     <nav class="fixed w-full z-50 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
@@ -58,7 +58,7 @@
                 <div class="hidden md:flex space-x-8 font-bold uppercase text-sm">
                     <a href="#inicio" class="hover:text-primary transition">Inicio</a>
                     <a href="#pasteles" class="hover:text-primary transition">Pasteles</a>
-                    <a href="#exportacion" class="hover:text-primary transition">USA 🇺🇸</a>
+                    <a href="#exportacion" class="hover:text-primary transition">Envíos USA 🇺🇸</a>
                     <a href="#contacto" class="hover:text-primary transition">Contacto</a>
                 </div>
                 <button onclick="document.getElementById('contacto').scrollIntoView()" class="bg-secondary text-white px-6 py-2 rounded-full font-bold shadow-lg hover:opacity-90 transition">
@@ -68,7 +68,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Sección Principal (Hero) -->
     <section id="inicio" class="pt-32 pb-20 px-4 bg-yellow-50">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 space-y-6 text-center md:text-left">
@@ -89,7 +89,7 @@
         </div>
     </section>
 
-    <!-- Menú -->
+    <!-- Sección de Productos -->
     <section id="pasteles" class="py-20 px-4 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold mb-4">Nuestro Menú</h2>
@@ -99,21 +99,21 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Producto 1 -->
             <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
-                <img src="https://images.unsplash.com/photo-1599596009123-5e93347f15b4?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Imagen de Pastel para perro]">
+                <img src="https://images.unsplash.com/photo-1599596009123-5e93347f15b4?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Pastel para perro]">
                 <h3 class="text-xl font-bold mb-2">Pastel Personalizado</h3>
                 <p class="text-gray-600 text-sm mb-4">Base de pollo o res con decoración de puré de camote.</p>
                 <span class="text-2xl font-black text-primary">$35.00</span>
             </div>
             <!-- Producto 2 -->
             <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
-                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Imagen de Cupcakes para perro]">
+                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Cupcakes para perro]">
                 <h3 class="text-xl font-bold mb-2">Pup-cakes (Pack 6)</h3>
                 <p class="text-gray-600 text-sm mb-4">Ideales para compartir con sus amigos perrunos.</p>
                 <span class="text-2xl font-black text-secondary">$18.00</span>
             </div>
             <!-- Producto 3 -->
             <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
-                <img src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Imagen de Premios naturales]">
+                <img src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Snacks naturales para perro]">
                 <h3 class="text-xl font-bold mb-2">Snacks Deshidratados</h3>
                 <p class="text-gray-600 text-sm mb-4">Premio perfecto 100% natural, alto en proteína.</p>
                 <span class="text-2xl font-black text-red-500">$12.00</span>
@@ -121,7 +121,7 @@
         </div>
     </section>
 
-    <!-- Exportación -->
+    <!-- Sección de Exportación -->
     <section id="exportacion" class="py-20 bg-gray-900 text-white text-center px-4">
         <h2 class="text-4xl font-bold mb-6">✈️ Envíos a todo USA</h2>
         <p class="text-xl mb-10 max-w-2xl mx-auto">Exportamos nuestros snacks y kits de repostería canina para que la distancia no sea un impedimento.</p>
@@ -130,7 +130,7 @@
         </div>
     </section>
 
-    <!-- Formulario de Contacto -->
+    <!-- Formulario de Pedido -->
     <section id="contacto" class="py-20 px-4 bg-gray-50">
         <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl">
             <h2 class="text-3xl font-bold text-center mb-8">Haz tu Pedido 🐾</h2>
@@ -150,16 +150,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Pie de página -->
     <footer class="py-10 text-center border-t border-gray-100">
         <p class="font-bold text-gray-400">© 2024 Happy Birthdog - Hecho con amor para los peludos.</p>
     </footer>
 
+    <!-- Lógica de JavaScript -->
     <script>
-        /**
-         * Función para disparar la animación de confeti.
-         * Se asegura de que la librería esté cargada antes de ejecutar.
-         */
         function celebrate() {
             try {
                 if (typeof confetti === 'function') {
@@ -171,29 +168,24 @@
                     });
                 }
             } catch (e) {
-                console.warn("La animación de confeti no se pudo cargar: ", e);
+                console.error("Error al lanzar confeti:", e);
             }
         }
 
-        /**
-         * Recopila los datos del formulario y redirige a WhatsApp.
-         */
         function sendToWhatsApp() {
             const nombre = document.getElementById('nombre').value;
             const perro = document.getElementById('perro').value;
             const producto = document.getElementById('producto').value;
             const mensaje = document.getElementById('mensaje').value;
             
-            // Reemplaza con tu número real de WhatsApp (formato internacional)
-            const telefono = "521234567890"; 
+            const telefono = "521234567890"; // Cambia este número por el tuyo real
             const texto = `¡Hola! Soy ${nombre}, quiero un ${producto} para mi perrito ${perro}.%0A%0A*Detalles:* ${mensaje}`;
             
             window.open(`https://wa.me/${telefono}?text=${texto}`, '_blank');
         }
 
-        // Se dispara la celebración con un pequeño retraso para evitar errores de renderizado.
         window.addEventListener('load', () => {
-            setTimeout(celebrate, 800);
+            setTimeout(celebrate, 1000);
         });
     </script>
 </body>

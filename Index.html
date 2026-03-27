@@ -1,0 +1,331 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthdog | ¡La Fiesta de su Vida!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary: #FF9F1C;
+            --secondary: #2EC4B6;
+            --accent: #E71D36;
+            --cream: #FDFFFC;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .bg-primary { background-color: var(--primary); }
+        .text-primary { color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .paw-print {
+            position: absolute;
+            color: rgba(255, 159, 28, 0.1);
+            font-size: 2rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .card-pop:hover {
+            transform: scale(1.05) rotate(2deg);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .custom-shape-divider-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        .custom-shape-divider-bottom .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Huellas decorativas -->
+    <i class="fas fa-paw paw-print" style="top: 15%; left: 5%;"></i>
+    <i class="fas fa-paw paw-print" style="top: 40%; right: 8%;"></i>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white shadow-lg border-b-4 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="celebrate()">
+                    <div class="bg-primary p-2 rounded-lg text-white rotate-12">
+                        <i class="fas fa-dog text-2xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-gray-800">Happy <span class="text-primary">Birthdog</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-gray-700 font-bold uppercase text-sm tracking-widest">
+                    <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                    <a href="#pasteles" class="hover:text-primary transition">Pasteles</a>
+                    <a href="#exportacion" class="hover:text-primary transition">USA 🇺🇸</a>
+                    <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+                </div>
+                <!-- ACTUALIZA EL NÚMERO AQUÍ TAMBIÉN SI QUIERES -->
+                <a href="https://wa.me/521234567890" target="_blank" class="bg-secondary text-white px-6 py-3 rounded-full font-bold shadow-lg hover:brightness-110 transition active:scale-95 hidden sm:inline-block">
+                    <i class="fab fa-whatsapp mr-2"></i>WHATSAPP
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="inicio" class="relative pt-32 pb-40 px-4 bg-yellow-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 space-y-8 text-center md:text-left">
+                <div class="inline-block bg-white border-2 border-primary px-4 py-2 rounded-full text-primary font-bold animate-bounce">
+                    🦴 ¡Sabor natural para su colita feliz!
+                </div>
+                <h1 class="text-6xl md:text-7xl font-extrabold text-gray-900 leading-none">
+                    ¡Ladridos de <span class="text-primary">Felicidad</span> en cada bocado!
+                </h1>
+                <p class="text-2xl text-gray-600 font-medium">
+                    Pastelería artesanal diseñada para estómagos perrunos. Exportamos snacks deshidratados a USA.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-6">
+                    <a href="#pasteles" class="bg-primary text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl hover:-translate-y-1 transition text-center">
+                        VER MENÚ 🎂
+                    </a>
+                    <a href="#contacto" class="bg-white border-4 border-secondary text-secondary px-10 py-5 rounded-2xl font-black text-xl hover:bg-secondary hover:text-white transition text-center">
+                        HACER PEDIDO 🐾
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-16 md:mt-0 relative flex justify-center">
+                <div class="floating relative">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Perro feliz con pastel" class="rounded-[40px] border-8 border-white shadow-2xl w-full max-w-md rotate-3">
+                    <div class="absolute -bottom-6 -left-6 bg-secondary text-white p-6 rounded-2xl shadow-xl -rotate-12 font-bold text-center">
+                        <span class="block text-3xl">USA</span>
+                        <span>Shipping 🇺🇸</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="custom-shape-divider-bottom">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path></svg>
+        </div>
+    </section>
+
+    <!-- Pasteles -->
+    <section id="pasteles" class="py-24 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-5xl font-bold text-gray-900 mb-6">Menú <span class="text-secondary">Guau-met</span></h2>
+            <p class="text-xl text-gray-500">Ingredientes 100% seguros: Sin azúcares, sin xilitol, sin harinas refinadas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="relative bg-white rounded-3xl p-6 border-2 border-gray-100 shadow-xl card-pop">
+                <img src="https://images.unsplash.com/photo-1599596009123-5e93347f15b4?auto=format&fit=crop&w=600&q=80" class="rounded-2xl mb-6 h-56 w-full object-cover">
+                <h3 class="text-2xl font-bold mb-3">Pastel Personalizado</h3>
+                <p class="text-gray-600 mb-6 font-medium">Base de pollo o res con cobertura de puré de camote y coco.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-2xl font-black text-primary">$35.00</span>
+                    <button onclick="selectProduct('Pastel Personalizado')" class="bg-primary text-white px-4 py-2 rounded-xl font-bold">Elegir</button>
+                </div>
+            </div>
+
+            <div class="relative bg-white rounded-3xl p-6 border-2 border-gray-100 shadow-xl card-pop">
+                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=600&q=80" class="rounded-2xl mb-6 h-56 w-full object-cover">
+                <h3 class="text-2xl font-bold mb-3">Pack de Pup-cakes</h3>
+                <p class="text-gray-600 mb-6 font-medium">6 pastelitos ideales para compartir con sus amigos del parque.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-2xl font-black text-secondary">$18.00</span>
+                    <button onclick="selectProduct('Pack Pup-cakes')" class="bg-secondary text-white px-4 py-2 rounded-xl font-bold">Elegir</button>
+                </div>
+            </div>
+
+            <div class="relative bg-white rounded-3xl p-6 border-2 border-gray-100 shadow-xl card-pop">
+                <img src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?auto=format&fit=crop&w=600&q=80" class="rounded-2xl mb-6 h-56 w-full object-cover">
+                <h3 class="text-2xl font-bold mb-3">Galletón Gigante</h3>
+                <p class="text-gray-600 mb-6 font-medium">Una galleta tamaño XL con dedicatoria especial.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-2xl font-black text-red-500">$12.00</span>
+                    <button onclick="selectProduct('Galletón Gigante')" class="bg-red-500 text-white px-4 py-2 rounded-xl font-bold">Elegir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exportación USA -->
+    <section id="exportacion" class="py-24 bg-gray-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 space-y-8">
+                <h2 class="text-5xl font-bold leading-tight">✈️ Envíos a <span class="text-primary underline decoration-secondary">USA</span></h2>
+                <p class="text-xl text-gray-300">Nuestros productos secos y deshidratados viajan seguros para que ningún perrito se quede sin probar Happy Birthdog.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
+                        <i class="fas fa-bone text-primary mb-2 text-3xl"></i>
+                        <h4 class="font-bold text-xl">Snacks Secos</h4>
+                        <p class="text-sm text-gray-400">Galletas de avena, manzana y crema de maní.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
+                        <i class="fas fa-box-open text-secondary mb-2 text-3xl"></i>
+                        <h4 class="font-bold text-xl">Kits DIY</h4>
+                        <p class="text-sm text-gray-400">Pre-mezclas para hornear en casa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="bg-white text-gray-900 p-8 rounded-[3rem] shadow-2xl rotate-2">
+                    <h4 class="text-2xl font-bold mb-4">¿Vives en USA? 🇺🇸</h4>
+                    <p class="mb-6">Selecciona la opción de exportación en el formulario y te enviaremos nuestro catálogo internacional.</p>
+                    <div class="flex items-center gap-4 bg-yellow-50 p-4 rounded-2xl">
+                        <i class="fas fa-info-circle text-primary"></i>
+                        <span class="text-sm font-bold italic">Importante: Solo productos no perecederos.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Funcional -->
+    <section id="contacto" class="py-24 px-4 bg-primary/10">
+        <div class="max-w-4xl mx-auto bg-white rounded-[3rem] shadow-2xl overflow-hidden border-8 border-white">
+            <div class="p-10 md:p-16 text-center">
+                <h2 class="text-4xl font-bold mb-4">¡Pide tu Fiesta! 🎉</h2>
+                <p class="text-xl text-gray-600 mb-10">Recibirás una respuesta por WhatsApp o Email en menos de 1 hora.</p>
+                
+                <!-- Formspree (Cámbialo por tu ID real) -->
+                <form id="orderForm" action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="space-y-6 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="font-bold ml-2">Nombre del Humano</label>
+                            <input type="text" name="humano" required placeholder="Tu nombre..." class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-primary outline-none transition">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-bold ml-2">Nombre del cumpleañero 🐶</label>
+                            <input type="text" name="perro" required placeholder="Nombre del perrito..." class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-secondary outline-none transition">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="font-bold ml-2">WhatsApp / Teléfono</label>
+                            <input type="tel" name="telefono" id="whatsapp_phone" required placeholder="Ej: +52 1 234 567 89" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-primary outline-none transition">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-bold ml-2">¿Dónde te encuentras?</label>
+                            <select name="ubicacion" id="ubicacion" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-primary outline-none transition">
+                                <option value="Local">Local (Pasteles frescos)</option>
+                                <option value="USA">USA (Snacks secos / Exportación)</option>
+                                <option value="Otro">Otro lugar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-bold ml-2">¿Qué producto quieres?</label>
+                        <select name="producto" id="product_select" class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-secondary outline-none transition">
+                            <option value="Pastel Personalizado">Pastel Personalizado</option>
+                            <option value="Pack Pup-cakes">Pack de Pup-cakes</option>
+                            <option value="Galletón Gigante">Galletón Gigante</option>
+                            <option value="Snacks USA">Snacks de Exportación</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-bold ml-2">Detalles extras (alergias, colores, fecha)</label>
+                        <textarea name="mensaje" id="mensaje_adicional" rows="3" placeholder="Ej: Es alérgico al pollo, quiere un pastel azul para el 15 de Octubre..." class="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-primary outline-none transition"></textarea>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button type="submit" class="flex-1 bg-gray-900 text-white py-5 rounded-2xl font-black text-xl hover:bg-black transition">
+                            ENVIAR POR EMAIL 📩
+                        </button>
+                        <button type="button" onclick="sendToWhatsApp()" class="flex-1 bg-green-500 text-white py-5 rounded-2xl font-black text-xl hover:bg-green-600 transition">
+                            PEDIR POR WHATSAPP 🐾
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 text-center">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <div class="flex items-center justify-center space-x-3">
+                <i class="fas fa-dog text-3xl text-primary"></i>
+                <span class="text-2xl font-bold">Happy Birthdog</span>
+            </div>
+            <p class="text-gray-400">©️ 2024 Pastelería Canina Artesanal - Local & Exportación.</p>
+        </div>
+    </footer>
+
+    <script>
+        function celebrate() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#FF9F1C', '#2EC4B6']
+            });
+        }
+
+        function selectProduct(name) {
+            document.getElementById('product_select').value = name;
+            document.getElementById('contacto').scrollIntoView();
+            celebrate();
+        }
+
+        function sendToWhatsApp() {
+            const humano = document.querySelector('input[name="humano"]').value;
+            const perro = document.querySelector('input[name="perro"]').value;
+            const producto = document.getElementById('product_select').value;
+            const ubicacion = document.getElementById('ubicacion').value;
+            const extras = document.getElementById('mensaje_adicional').value;
+
+            if(!humano || !perro) {
+                alert("Por favor rellena el nombre tuyo y de tu perrito.");
+                return;
+            }
+
+            const phone = "521234567890"; // ⬅️ CAMBIA ESTO POR TU NÚMERO REAL
+            const text = `¡Hola! Soy ${humano}, quiero un pedido para mi perrito ${perro}.%0A%0A*Producto:* ${producto}%0A*Ubicación:* ${ubicacion}%0A*Detalles:* ${extras}`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            celebrate();
+        });
+    </script>
+</body>
+</html>

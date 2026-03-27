@@ -58,7 +58,7 @@
                 <div class="hidden md:flex space-x-8 font-bold uppercase text-sm">
                     <a href="#inicio" class="hover:text-primary transition">Inicio</a>
                     <a href="#pasteles" class="hover:text-primary transition">Pasteles</a>
-                    <a href="#exportacion" class="hover:text-primary transition">Envíos USA 🇺🇸</a>
+                    <a href="#exportacion" class="hover:text-primary transition">USA 🇺🇸</a>
                     <a href="#contacto" class="hover:text-primary transition">Contacto</a>
                 </div>
                 <button onclick="document.getElementById('contacto').scrollIntoView()" class="bg-secondary text-white px-6 py-2 rounded-full font-bold shadow-lg hover:opacity-90 transition">
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="[Perro con pastel de cumpleaños]" class="rounded-3xl shadow-2xl floating w-full max-w-md">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="[Perro celebrando su cumpleaños]" class="rounded-3xl shadow-2xl floating w-full max-w-md">
             </div>
         </div>
     </section>
@@ -92,28 +92,28 @@
     <!-- Sección de Productos -->
     <section id="pasteles" class="py-20 px-4 max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Nuestro Menú</h2>
+            <h2 class="text-4xl font-bold mb-4">Nuestro Menú Especial</h2>
             <p class="text-gray-500 italic">Ingredientes grado humano, aptos para mascotas.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Producto 1 -->
             <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
-                <img src="https://images.unsplash.com/photo-1599596009123-5e93347f15b4?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Pastel para perro]">
+                <img src="https://images.unsplash.com/photo-1599596009123-5e93347f15b4?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Pastel para perros de pollo]">
                 <h3 class="text-xl font-bold mb-2">Pastel Personalizado</h3>
                 <p class="text-gray-600 text-sm mb-4">Base de pollo o res con decoración de puré de camote.</p>
                 <span class="text-2xl font-black text-primary">$35.00</span>
             </div>
             <!-- Producto 2 -->
             <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
-                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Cupcakes para perro]">
+                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Cupcakes saludables para perro]">
                 <h3 class="text-xl font-bold mb-2">Pup-cakes (Pack 6)</h3>
                 <p class="text-gray-600 text-sm mb-4">Ideales para compartir con sus amigos perrunos.</p>
                 <span class="text-2xl font-black text-secondary">$18.00</span>
             </div>
             <!-- Producto 3 -->
             <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
-                <img src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Snacks naturales para perro]">
+                <img src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover" alt="[Premios de carne deshidratada]">
                 <h3 class="text-xl font-bold mb-2">Snacks Deshidratados</h3>
                 <p class="text-gray-600 text-sm mb-4">Premio perfecto 100% natural, alto en proteína.</p>
                 <span class="text-2xl font-black text-red-500">$12.00</span>
@@ -135,15 +135,15 @@
         <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl">
             <h2 class="text-3xl font-bold text-center mb-8">Haz tu Pedido 🐾</h2>
             <form class="space-y-4" onsubmit="event.preventDefault(); sendToWhatsApp();">
-                <input type="text" id="nombre" placeholder="Tu nombre" required class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition">
-                <input type="text" id="perro" placeholder="Nombre de tu perrito" required class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition">
-                <select id="producto" class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-secondary transition">
+                <input type="text" id="nombre" placeholder="Tu nombre" required class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition border-none">
+                <input type="text" id="perro" placeholder="Nombre de tu perrito" required class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition border-none">
+                <select id="producto" class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-secondary transition border-none">
                     <option value="Pastel Personalizado">Pastel Personalizado</option>
                     <option value="Pup-cakes">Pack de Pup-cakes</option>
                     <option value="Snacks Exportacion">Snacks USA 🇺🇸</option>
                 </select>
-                <textarea id="mensaje" placeholder="¿Alguna alergia o detalle especial para el diseño?" rows="3" class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition"></textarea>
-                <button type="submit" class="w-full bg-green-500 text-white py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition flex items-center justify-center">
+                <textarea id="mensaje" placeholder="¿Alguna alergia o detalle especial para el diseño?" rows="3" class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition border-none"></textarea>
+                <button type="submit" class="w-full bg-green-500 text-white py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition flex items-center justify-center shadow-lg">
                     <i class="fab fa-whatsapp mr-2 text-2xl"></i> PEDIR POR WHATSAPP
                 </button>
             </form>
@@ -151,8 +151,13 @@
     </section>
 
     <!-- Pie de página -->
-    <footer class="py-10 text-center border-t border-gray-100">
-        <p class="font-bold text-gray-400">©️ 2024 Happy Birthdog - Hecho con amor para los peludos.</p>
+    <footer class="py-10 text-center border-t border-gray-100 bg-white">
+        <div class="flex justify-center space-x-6 mb-4">
+            <i class="fab fa-instagram text-2xl text-gray-400 hover:text-primary cursor-pointer transition"></i>
+            <i class="fab fa-facebook text-2xl text-gray-400 hover:text-primary cursor-pointer transition"></i>
+            <i class="fab fa-tiktok text-2xl text-gray-400 hover:text-primary cursor-pointer transition"></i>
+        </div>
+        <p class="font-bold text-gray-400">© 2024 Happy Birthdog - Hecho con amor para los peludos.</p>
     </footer>
 
     <!-- Lógica de JavaScript -->
@@ -178,7 +183,8 @@
             const producto = document.getElementById('producto').value;
             const mensaje = document.getElementById('mensaje').value;
             
-            const telefono = "521234567890"; // Reemplaza con tu número de WhatsApp
+            // IMPORTANTE: Pon aquí tu número con código de país (Ej: 52 para México)
+            const telefono = "521234567890"; 
             const texto = `¡Hola! Soy ${nombre}, quiero un ${producto} para mi perrito ${perro}.%0A%0A*Detalles:* ${mensaje}`;
             
             window.open(`https://wa.me/${telefono}?text=${texto}`, '_blank');

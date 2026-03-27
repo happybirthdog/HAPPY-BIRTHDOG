@@ -1,4 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthdog | ¡La Fiesta de su Vida!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary: #FF9F1C;
+            --secondary: #2EC4B6;
+            --accent: #E71D36;
+        }
 
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .bg-primary { background-color: var(--primary); }
+        .text-primary { color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .card-pop:hover {
+            transform: scale(1.03);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="celebrate()">
+                    <i class="fas fa-dog text-3xl text-primary"></i>
+                    <span class="text-2xl font-bold">Happy <span class="text-primary">Birthdog</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-bold uppercase text-sm">
+                    <a href="#inicio" class="hover:text-primary transition">Inicio</a>
+                    <a href="#pasteles" class="hover:text-primary transition">Pasteles</a>
+                    <a href="#exportacion" class="hover:text-primary transition">USA 🇺🇸</a>
+                    <a href="#contacto" class="hover:text-primary transition">Contacto</a>
+                </div>
+                <button onclick="document.getElementById('contacto').scrollIntoView()" class="bg-secondary text-white px-6 py-2 rounded-full font-bold shadow-lg hover:opacity-90 transition">
+                    PEDIR YA
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="inicio" class="pt-32 pb-20 px-4 bg-yellow-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 space-y-6 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                    ¡El mejor día para tu <span class="text-primary">Mejor Amigo</span>!
+                </h1>
+                <p class="text-xl text-gray-600">
+                    Pastelería artesanal 100% natural. Sin conservadores, solo amor y sabor para tu mascota.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#pasteles" class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:-translate-y-1 transition">Ver Menú 🎂</a>
+                    <a href="#exportacion" class="bg-white border-2 border-secondary text-secondary px-8 py-4 rounded-xl font-bold text-lg hover:bg-secondary hover:text-white transition">Envíos USA 🇺🇸</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="Perro con pastel de cumpleaños" class="rounded-3xl shadow-2xl floating w-full max-w-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Menú -->
+    <section id="pasteles" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Nuestro Menú</h2>
+            <p class="text-gray-500 italic">Ingredientes grado humano, aptos para mascotas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Producto 1 -->
+            <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
+                <img src="https://images.unsplash.com/photo-1599596009123-5e93347f15b4?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover">
+                <h3 class="text-xl font-bold mb-2">Pastel Personalizado</h3>
+                <p class="text-gray-600 text-sm mb-4">Base de pollo o res con decoración de puré de camote.</p>
+                <span class="text-2xl font-black text-primary">$35.00</span>
+            </div>
+            <!-- Producto 2 -->
+            <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
+                <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover">
+                <h3 class="text-xl font-bold mb-2">Pup-cakes (Pack 6)</h3>
+                <p class="text-gray-600 text-sm mb-4">Ideales para compartir con sus amigos perrunos.</p>
+                <span class="text-2xl font-black text-secondary">$18.00</span>
+            </div>
+            <!-- Producto 3 -->
+            <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 card-pop text-center">
+                <img src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?auto=format&fit=crop&w=400&q=80" class="rounded-2xl mb-4 h-48 w-full object-cover">
+                <h3 class="text-xl font-bold mb-2">Snacks Deshidratados</h3>
+                <p class="text-gray-600 text-sm mb-4">Premio perfecto 100% natural, alto en proteína.</p>
+                <span class="text-2xl font-black text-red-500">$12.00</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exportación -->
+    <section id="exportacion" class="py-20 bg-gray-900 text-white text-center px-4">
+        <h2 class="text-4xl font-bold mb-6">✈️ Envíos a todo USA</h2>
+        <p class="text-xl mb-10 max-w-2xl mx-auto">Exportamos nuestros snacks y kits de repostería canina para que la distancia no sea un impedimento.</p>
+        <div class="inline-block bg-primary px-8 py-4 rounded-full font-bold text-lg animate-pulse">
+            DISPONIBLE AHORA 🇺🇸
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl">
+            <h2 class="text-3xl font-bold text-center mb-8">Haz tu Pedido 🐾</h2>
+            <form class="space-y-4" onsubmit="event.preventDefault(); sendToWhatsApp();">
+                <input type="text" id="nombre" placeholder="Tu nombre" required class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition">
+                <input type="text" id="perro" placeholder="Nombre de tu perrito" required class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition">
+                <select id="producto" class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-secondary transition">
+                    <option value="Pastel Personalizado">Pastel Personalizado</option>
+                    <option value="Pup-cakes">Pack de Pup-cakes</option>
+                    <option value="Snacks Exportacion">Snacks USA 🇺🇸</option>
+                </select>
+                <textarea id="mensaje" placeholder="¿Alguna alergia o detalle especial para el diseño?" rows="3" class="w-full p-4 rounded-xl bg-gray-100 outline-none focus:ring-2 ring-primary transition"></textarea>
+                <button type="submit" class="w-full bg-green-500 text-white py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2 text-2xl"></i> PEDIR POR WHATSAPP
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center border-t border-gray-100">
+        <p class="font-bold text-gray-400">© 2024 Happy Birthdog - Hecho con amor para los peludos.</p>
+    </footer>
+
+    <script>
+        function celebrate() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#FF9F1C', '#2EC4B6', '#E71D36']
+            });
+        }
+
+        function sendToWhatsApp() {
+            const nombre = document.getElementById('nombre').value;
+            const perro = document.getElementById('perro').value;
+            const producto = document.getElementById('producto').value;
+            const mensaje = document.getElementById('mensaje').value;
+            
+            const telefono = "521234567890"; // REEMPLAZA ESTE NÚMERO POR EL TUYO REAL
+            const texto = `¡Hola! Soy ${nombre}, quiero un ${producto} para mi perrito ${perro}.%0A%0A*Detalles:* ${mensaje}`;
+            
+            window.open(`https://wa.me/${telefono}?text=${texto}`, '_blank');
+        }
+
+        // Animación al cargar
+        window.onload = celebrate;
+    </script>
+</body>
+</html>
 
 
 <!DOCTYPE html>
